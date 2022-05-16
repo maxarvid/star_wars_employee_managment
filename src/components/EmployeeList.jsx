@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
+
 
 const EmployeeList = () => {
+  const [employees, setEmployees] = useState([])
   // Get the Data
   // fetch it with axios
-  
+
+  const fetchEmployees = () => {
+    const response = axios.get('url goes here')
+  }
+
   // Store the data in State somehow
   // rely on useState ie component state
 
