@@ -5,6 +5,6 @@ describe("User can view employees", () => {
   });
 
   it("is expected to display 10 Star Wars characters", () => {
-    cy.get("[data-cy=employee-list]").should("have.length", 10);
+    cy.get("[data-cy=employee-list]").children().should("have.length", 10);
   });
 });
