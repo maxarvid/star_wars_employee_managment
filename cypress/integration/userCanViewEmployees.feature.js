@@ -1,5 +1,6 @@
 describe("User can view employees", () => {
   beforeEach(() => {
+    cy.intercept("GET", "**api/people", { fixture: "people.json" });
     cy.visit("/");
   });
 

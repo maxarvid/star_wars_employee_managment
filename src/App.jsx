@@ -1,8 +1,11 @@
 import React from 'react'
+import EmployeeList from './components/EmployeeList'
 
 const App = () => {
   return (
-    <div>Hello World!</div>
+    <div>
+      <EmployeeList />
+    </div>
   )
 }
 

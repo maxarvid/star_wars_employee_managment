@@ -1,14 +1,15 @@
-import React, { useState } from 'react'
-
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const EmployeeList = () => {
-  const [employees, setEmployees] = useState([])
+  const [employees, setEmployees] = useState([]);
   // Get the Data
   // fetch it with axios
 
-  const fetchEmployees = () => {
-    const response = axios.get('url goes here')
-  }
+  const fetchEmployees = async () => {
+    const response = await axios.get("https://swapi.dev/api/people");
+    debugger;
+  };
 
   // Store the data in State somehow
   // rely on useState ie component state
@@ -16,9 +17,11 @@ const EmployeeList = () => {
   // Display the data in the jsx return statement
   // use .map() to create an array with jsx in it
 
-  return (
-    <div>EmployeeList</div>
-  )
-}
+  useEffect(() => {
+    fetchEmployees();
+  }, []);
 
-export default EmployeeList
+  return <div data-cy="employee-list">EmployeeList</div>;
+};
+
+export default EmployeeList;
